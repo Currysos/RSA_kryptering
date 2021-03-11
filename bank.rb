@@ -5,8 +5,6 @@
 class User
   attr_reader :public_key
 
-
-
   def initialize(prime1, prime2)
     n = prime2 * prime1
     phi_n = (prime1 - 1) * (prime2 - 1)
@@ -20,7 +18,6 @@ class User
     @private_key = { d: d, n: n }
     puts 'Welcome to our bank user!'
     puts "Your public key is (e: #{@public_key[:e]}, n: #{@public_key[:n]})"
-
     @received_messages = []
   end
 
