@@ -11,15 +11,15 @@ def encrypt(message, public_key)
   encrypted_message
 end
 
-current_user = User.new(239, 313)
+$current_user = User.new(239, 313)
 
 loop do
   puts 'Please enter your message (enter print to print messages): '
   answer = gets.chomp
   break if ['print', 'p', '', 'quit'].include?(answer)
 
-  encrypted_message = encrypt(answer, current_user.public_key)
+  encrypted_message = encrypt(answer, $current_user.public_key)
   puts "Your encrypted message: #{encrypted_message}"
-  current_user.store_message(encrypted_message)
+  $current_user.store_message(encrypted_message)
 end
-current_user.print_received_messages
+$current_user.print_received_messages

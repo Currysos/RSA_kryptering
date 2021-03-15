@@ -13,7 +13,7 @@ class User
     e += 1 while e.gcd(phi_n) != 1
     # d - variable
     d = 1
-    d += 1 while (d * e) % phi_n != 1 % phi_n
+    d += 1 while (d * e) % phi_n != 1
     @public_key = { e: e, n: n }
     @private_key = { d: d, n: n }
     puts 'Welcome to our bank user!'
