@@ -24,7 +24,7 @@ class User
   def decrypt(encrypted_message)
     decrypted_message = ''
     encrypted_message.split(':').drop(1).each do |current_encrypted_char_ascii|
-      decrypted_message += ((current_encrypted_char_ascii.to_i**@private_key[:d]) % @private_key[:n]).chr
+      decrypted_message += (current_encrypted_char_ascii.to_i.pow(@private_key[:d], @private_key[:n])).chr
     end
     decrypted_message
   end
